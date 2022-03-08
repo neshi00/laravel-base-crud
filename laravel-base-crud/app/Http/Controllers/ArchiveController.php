@@ -25,7 +25,7 @@ class ArchiveController extends Controller
      */
     public function create()
     {
-        //
+        return view("archives.create");
     }
 
     /**
