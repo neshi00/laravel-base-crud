@@ -13,7 +13,9 @@ class ArchiveController extends Controller
      */
     public function index()
     {
-        //
+        $dati = Archive::all();
+
+        return view("archives.index", compact("dati"));
     }
 
     /**
@@ -45,7 +47,9 @@ class ArchiveController extends Controller
      */
     public function show($id)
     {
-        //
+        $archive = Archive::findOrFail($id);
+
+        return view("archives.show", compact("archive"));
     }
 
     /**
