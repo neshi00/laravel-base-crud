@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Archive;
 use Illuminate\Http\Request;
 
 class ArchiveController extends Controller
@@ -13,9 +14,9 @@ class ArchiveController extends Controller
      */
     public function index()
     {
-        $dati = Archive::all();
+        $data = Archive::all();
 
-        return view("archives.index", compact("dati"));
+        return view("archives.index", compact("data"));
     }
 
     /**

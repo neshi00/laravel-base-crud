@@ -19,7 +19,7 @@ class ArchivesTableSeeder extends Seeder
             $archive = new Archive();
 
             $archive->title = $faker->text("20");
-            $archive->prezzo = $faker->numberBetween(10, 100);
+            $archive->price = $faker->numberBetween(10, 100);
             $archive->thumb = $faker->text("100");
             $archive->description = $faker->text("200");
 

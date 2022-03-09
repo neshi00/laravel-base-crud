@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArchiveTable extends Migration
+class CreateArchivesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateArchiveTable extends Migration
      */
     public function up()
     {
-        Schema::create('archive', function (Blueprint $table) {
+        Schema::create('archives', function (Blueprint $table) {
             $table->id();
             $table->string("title", 100);
             $table->text("description");
-            $table->string("thumb", 200);
-            $table->float("prezzo", 5, 2);
+            $table->float("price", 5, 2);
             $table->string("series", 100);
-            $table->string("type", 100);
             $table->timestamps();
         });
     }
@@ -32,8 +30,6 @@ class CreateArchiveTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('archive');
-   
-
+        Schema::dropIfExists('archives');
     }
 }
