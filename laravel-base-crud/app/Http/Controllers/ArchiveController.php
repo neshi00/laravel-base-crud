@@ -72,7 +72,9 @@ class ArchiveController extends Controller
      */
     public function edit($id)
     {
-        //
+        $archive = Archive::findOrFail($id);
+
+        return view("archives.edit", compact("archive"));
     }
 
     /**
@@ -81,10 +83,15 @@ class ArchiveController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     */
+     */  
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $archive = Archive::findOrFail($id);
+
+        $archive->update($data);
+
+        return redirect()->route("archives.show", $id);
     }
 
     /**

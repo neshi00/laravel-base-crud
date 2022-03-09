@@ -23,6 +23,8 @@
             <td>{{ $archive->description }}</td>
             <td>{{ $archive->price }}</td>
             <td>{{ $archive->series }}</td>
+
+            <td><a href="{{ route("archives.edit", $archive->id) }}">Modifica</a></td>
         </tr>
             
         @endforeach
