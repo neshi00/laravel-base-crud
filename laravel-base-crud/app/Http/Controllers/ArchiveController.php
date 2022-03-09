@@ -37,7 +37,18 @@ class ArchiveController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $newComic = new Archive();
+
+        $newComic->title = $data["title"];
+        $newComic->price = $data["price"];
+        $newComic->description = $data["description"];
+        $newComic->series = $data["series"];
+
+        $newComic->save();
+
+        return redirect()->route("archives.show", $newComic->id);
     }
 
     /**
