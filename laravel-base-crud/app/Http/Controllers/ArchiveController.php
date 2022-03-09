@@ -101,7 +101,11 @@ class ArchiveController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
+
     {
-        //
+        $archive = Archive::findOrFail($id);
+        $archive->delete();
+
+        redirect()->route("archives.index");
     }
 }

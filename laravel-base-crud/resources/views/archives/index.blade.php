@@ -25,11 +25,21 @@
             <td>{{ $archive->series }}</td>
 
             <td><a href="{{ route("archives.edit", $archive->id) }}">Modifica</a></td>
-        </tr>
+
+            <td>
+                 <form 
+                    action="{{ route("archives.destroy", $archive->id) }}" method="post">
+                    @csrf
+                    @method("delete")
+
+                    <input type="submit" value="elimina">
+                
+                </form>
+            </tr>
             
         @endforeach
 
-
+ 
 
     </tbody>
 </table>
