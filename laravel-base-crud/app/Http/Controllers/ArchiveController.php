@@ -106,6 +106,6 @@ class ArchiveController extends Controller
         $archive = Archive::findOrFail($id);
         $archive->delete();
 
-        redirect()->route("archives.index");
+        return redirect()->route("archives.index");
     }
 }
